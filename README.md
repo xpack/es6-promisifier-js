@@ -6,7 +6,7 @@
 
 ## An ES6 promisifier wrapper
 
-A module with support to wrap standard Node.js callback functions into ES6 promises.
+A module providing a class with a static function to wrap standard Node.js callback functions into ES6 promises.
 
 ## Prerequisites
 
@@ -26,22 +26,21 @@ The module does not provide any executables, and generaly there are few reasons 
 
 The development repository is available from the GitHub [xpack/es6-promisifier-js](https://github.com/xpack/es6-promisifier-js) project.
 
-To remove the module, the command is similar:
-
-```bash
-$ sudo npm uninstall  @ilg/cli-start-options
-```
-
-(On Windows `sudo` is not required`).
-
 ## User info
 
-The module can be included in CLI applications and the classes can be used to derive application classes.
+The module can be included in any applications and the `Promisifier` class can be used to access the `promisify()` functions.
 
 ```javascript
-// Equivalent of import { Promisifier } from 'es6-promisifier'
-
 const Promisifier = require('@ilg/es6-promisifier').Promisifier
+
+const fs = require('fs')
+
+// Promisify a function with callback from the Node.js standard library.
+if (!fs.readFilePromise) {
+  fs.readFilePromise = Promisifier.promisify(fs.readFile)
+}
+
+const fileContent = await fs.readFilePromise('someFile')
 ```
 
 ## Developer info
