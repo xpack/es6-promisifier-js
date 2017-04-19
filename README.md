@@ -1,2 +1,242 @@
-# es6-promisifier-js
-A module with a promisifier wrapper
+[![npm (scoped)](https://img.shields.io/npm/v/@ilg/es6-promisifier.svg)](https://www.npmjs.com/package/@ilg/es6-promisifier) 
+[![license](https://img.shields.io/github/license/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/blob/xpack/LICENSE) 
+[![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![Travis](https://img.shields.io/travis/xpack/es6-promisifier-js.svg?label=linux)](https://travis-ci.org/xpack/es6-promisifier-js)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/f11aw2irha640ank?svg=true)](https://ci.appveyor.com/project/ilg-ul/es6-promisifier-js)
+
+## An ES6 promisifier wrapper
+
+A module with support to wrap standard Node.js callback functions into ES6 promises.
+
+## Prerequisites
+
+A recent [Node.js](https://nodejs.org) (>7.x), since the ECMAScript 6 class syntax is used.
+
+If this is your first encounter with `npm`, you need to install the [node.js](https://nodejs.org/) JavScript run-time. The process is straighforward and does not polute the system locations significantly; just pick the current version, download the package suitable for your platform and install it as usual. The result is a binary program called `node` that can be used to execute JavaScript code from the terminal, and a link called `npm`, pointing to the `npm-cli.js` script, which is part of the node module that implements the npm functionality. On Windows, it is recommended to first install the [Git for Windows](https://git-scm.com/download/win) package.
+
+## Easy install
+
+The module is available as [**@ilg/es6-promisifier**](https://www.npmjs.com/package/@ilg/es6-promisifier) from the public repository, use `npm` to install it inside the module where it is needed:
+
+```bash
+$ npm install @ilg/es6-promisifier --save
+```
+
+The module does not provide any executables, and generaly there are few reasons to install it globally.
+
+The development repository is available from the GitHub [xpack/es6-promisifier-js](https://github.com/xpack/es6-promisifier-js) project.
+
+To remove the module, the command is similar:
+
+```bash
+$ sudo npm uninstall  @ilg/cli-start-options
+```
+
+(On Windows `sudo` is not required`).
+
+## User info
+
+The module can be included in CLI applications and the classes can be used to derive application classes.
+
+```javascript
+// Equivalent of import { Promisifier } from 'es6-promisifier'
+
+const Promisifier = require('@ilg/es6-promisifier').Promisifier
+```
+
+## Developer info
+
+### Git repo
+
+```bash
+$ git clone https://github.com/xpack/es6-promisifier-js.git es6-promisifier-js.git
+$ cd es6-promisifier-js.git
+$ npm install
+$ sudo npm link 
+$ ls -l /usr/local/lib/node_modules/@ilg
+```
+
+A link to the development folder should be present in the system `node_modules` folder.
+
+In projects that use this module under development, link back from the global location:
+
+```bash
+$ npm link @ilg/es6-promisifier
+```
+
+### Tests
+
+The tests use the [`node-tap`](http://www.node-tap.org) framework (_A Test-Anything-Protocol library for Node.js_, written by Isaac Schlueter).
+
+As for any `npm` package, the standard way to run the project tests is via `npm test`:
+
+```bash
+$ cd es6-promisifier-js.git
+$ npm install
+$ npm test
+```
+
+A typical test result looks like:
+
+```
+$ npm run test
+
+> @ilg/es6-promisifier@0.1.0 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> standard && npm run test-tap -s
+
+test/tap/promisify.js ............................... 29/29
+total ............................................... 29/29
+
+  29 passing (628.003ms)
+
+  ok
+```
+
+To run a specific test with more verbose output, use `npm run tap`:
+
+```
+$ npm run tap test/tap/promisify.js -s
+
+test/tap/promisify.js
+  original success
+    ✓ null error
+    ✓ returned value
+
+  original error
+    ✓ have error
+    ✓ error message match
+    ✓ no returned value
+
+  promisify success
+    ✓ returned value
+
+  promisify error
+    ✓ exception message
+
+  promisify success await
+    ✓ returned value
+
+  promisify error await
+    ✓ exception message
+
+  promisify multi success
+    ✓ result is array
+    ✓ first value
+    ✓ second value
+
+  promisify multi error
+    ✓ exception message
+
+  promisify multi success await
+    ✓ result is array
+    ✓ first value
+    ✓ second value
+
+  promisify multi error await
+    ✓ exception message
+
+  promisify single success
+    ✓ result is not array
+    ✓ value
+
+  promisify single error
+    ✓ exception message
+
+  promisify single success await
+    ✓ result is not array
+    ✓ value
+
+  promisify single error await
+    ✓ exception message
+
+  promisify already success await
+    ✓ returned value
+
+  promisify already error await
+    ✓ exception message
+
+  promisify thisArg success await
+    ✓ returned value
+    ✓ context value
+
+  promisify thisArg error await
+    ✓ exception message
+
+  constructor
+    ✓ assert
+
+
+  29 passing (636.866ms)
+```
+
+### Coverage tests
+
+Coverage tests are a good indication on how much of the source files is exercised by the tests. Ideally all source files should be covered 100%, for all 4 criteria (statements, branches, functions, lines).
+
+To run the coverage tests, use `npm run test-coverage`:
+
+```
+$ npm run test-coverage
+
+> @ilg/es6-promisifier@0.1.0 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> tap --coverage --reporter=classic --timeout 600 "test/tap/*.js"
+
+test/tap/promisify.js ............................... 29/29
+total ............................................... 29/29
+
+  29 passing (870.79ms)
+
+  ok
+----------------------------|----------|----------|----------|----------|----------------|
+File                        |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+----------------------------|----------|----------|----------|----------|----------------|
+All files                   |      100 |      100 |      100 |      100 |                |
+ es6-promisifier-js.git     |      100 |      100 |      100 |      100 |                |
+  index.js                  |      100 |      100 |      100 |      100 |                |
+ es6-promisifier-js.git/lib |      100 |      100 |      100 |      100 |                |
+  promisifier.js            |      100 |      100 |      100 |      100 |                |
+----------------------------|----------|----------|----------|----------|----------------|
+```
+
+### Continuous Integration (CI)
+
+The continuous integration tests are performed via [Travis CI](https://travis-ci.org/xpack/es6-promisifier-js) and [AppVeyor](https://ci.appveyor.com/project/ilg-ul/es6-promisifier-js).
+
+### Standard compliance
+
+The module uses ECMAScript 6 class definitions.
+
+As style, it uses the [JavaScript Standard Style](https://standardjs.com/), automatically checked at each commit via Travis CI.
+
+Known and accepted exceptions:
+
+- none.
+
+To manually fix compliance with the style guide (where possible):
+
+```
+$ npm run fix
+
+> @ilg/es6-promisifier@0.1.12 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> standard --fix
+
+```
+
+### Documentation metadata
+
+The documentation metadata follows the [JSdoc](http://usejsdoc.org) tags.
+
+To enforce checking at file level, add the following comments right after the `use strict`:
+
+```
+'use strict'
+/* eslint valid-jsdoc: "error" */
+/* eslint max-len: [ "error", 80, { "ignoreUrls": true } ] */
+```
+
+Note: be sure C style comments are used, C++ styles are not parsed by [ESLint](http://eslint.org).
+
+## License
+
+The original content is released under the MIT License, with
+all rights reserved to Liviu Ionescu.
