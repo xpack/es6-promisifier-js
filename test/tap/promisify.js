@@ -37,6 +37,8 @@
 
 // ----------------------------------------------------------------------------
 
+const fs = require('fs')
+
 // The `[node-tap](http://www.node-tap.org)` framework.
 const test = require('tap').test
 
@@ -300,6 +302,16 @@ test('constructor', (t) => {
   } catch (err) {
     t.equal(err.name, 'AssertionError', 'assert')
   }
+  t.end()
+})
+
+test('promisify in place', (t) => {
+  t.notOk(fs.readFilePromise, 'promise not there')
+  Promisifier.promisifyInPlace(fs, 'readFile')
+  t.ok(fs.readFilePromise, 'promise now available')
+  Promisifier.promisifyInPlace(fs, 'readFile')
+  t.ok(fs.readFilePromise, 'promise still there')
+
   t.end()
 })
 
