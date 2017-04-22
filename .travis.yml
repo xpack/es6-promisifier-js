@@ -37,7 +37,6 @@ notifications:
 
 cache:
   directories:
-    - ${HOME}/.npm # NPM cache
     - node_modules # NPM packages
 
 # -----------------------------------------------------------------------------
