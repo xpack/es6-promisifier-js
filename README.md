@@ -80,13 +80,13 @@ A typical test result looks like:
 ```
 $ npm run test
 
-> @ilg/es6-promisifier@0.1.0 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @ilg/es6-promisifier@0.1.2 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > standard && npm run test-tap -s
 
-test/tap/promisify.js ............................... 29/29
-total ............................................... 29/29
+test/tap/promisify.js ............................... 32/32
+total ............................................... 32/32
 
-  29 passing (628.003ms)
+  32 passing (669.026ms)
 
   ok
 ```
@@ -164,8 +164,13 @@ test/tap/promisify.js
   constructor
     ✓ assert
 
+  promisify in place
+    ✓ promise not there
+    ✓ promise now available
+    ✓ promise still there
 
-  29 passing (636.866ms)
+
+  32 passing (617.365ms)
 ```
 
 ### Coverage tests
@@ -177,13 +182,13 @@ To run the coverage tests, use `npm run test-coverage`:
 ```
 $ npm run test-coverage
 
-> @ilg/es6-promisifier@0.1.0 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
-> tap --coverage --reporter=classic --timeout 600 "test/tap/*.js"
+> @ilg/es6-promisifier@0.1.2 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> tap --coverage --reporter=classic --timeout 600 --no-color "test/tap/*.js"
 
-test/tap/promisify.js ............................... 29/29
-total ............................................... 29/29
+test/tap/promisify.js ............................... 32/32
+total ............................................... 32/32
 
-  29 passing (870.79ms)
+  32 passing (829.493ms)
 
   ok
 ----------------------------|----------|----------|----------|----------|----------------|
@@ -200,6 +205,8 @@ All files                   |      100 |      100 |      100 |      100 |       
 ### Continuous Integration (CI)
 
 The continuous integration tests are performed via [Travis CI](https://travis-ci.org/xpack/es6-promisifier-js) and [AppVeyor](https://ci.appveyor.com/project/ilg-ul/es6-promisifier-js).
+
+To speed up things, the `node_modules` folder is cached between builds.
 
 ### Standard compliance
 
