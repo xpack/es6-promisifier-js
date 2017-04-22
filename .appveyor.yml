@@ -14,7 +14,6 @@ version: "{branch}.{build}"
 skip_tags: true
 
 cache:
-  - ${HOME}/.npm # NPM cache
   - node_modules # NPM packages
 
 # Install scripts. (runs after repo cloning)
