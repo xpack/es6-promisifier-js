@@ -33,14 +33,12 @@ The module can be included in any applications and the `Promisifier` class can b
 ```javascript
 const Promisifier = require('@ilg/es6-promisifier').Promisifier
 
-const fs = require('fs')
+// Promisify functions from the Node.js callbacks library.
+// The new functions have similar names, but suffixed with `Promise`.
+Promisifier.promisifyInPlace(fs, 'readFile')
 
-// Promisify a function with callback from the Node.js standard library.
-if (!fs.readFilePromise) {
-  fs.readFilePromise = Promisifier.promisify(fs.readFile)
-}
-
-const fileContent = await fs.readFilePromise('someFile')
+// Promisify a single function from a third party simple module.
+const mkdirpPromise = Promisifier.promisify(require('mkdirp'))
 ```
 
 ## Developer info
