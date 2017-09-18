@@ -17,7 +17,10 @@ sudo: false
 # can do so in the `before_install` stage of the build.
 language: node_js
 node_js:
-  - "node" 
+  - "node"
+  - "8"
+  - "7"
+  - "lts/6"
 
 # https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
 git:
