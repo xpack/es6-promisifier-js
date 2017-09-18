@@ -44,6 +44,6 @@
   "bundledDependencies": [],
   "optionalDependencies": {},
   "engines": {
-    "node": ">6.11.0"
+    "node": ">7.7.0"
   }
 }
