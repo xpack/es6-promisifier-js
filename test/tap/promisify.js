@@ -300,7 +300,7 @@ test('constructor', (t) => {
     var obj = new Promisifier()
     t.notOk(obj, 'no return')
   } catch (err) {
-    t.equal(err.name, 'AssertionError', 'assert')
+    t.match(err.name, 'AssertionError', 'assert')
   }
   t.end()
 })
