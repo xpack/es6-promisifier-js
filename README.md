@@ -12,8 +12,6 @@ A module providing a class with a static function to wrap standard Node.js callb
 
 A recent [Node.js](https://nodejs.org) (>7.x), since the ECMAScript 6 class syntax is used.
 
-If this is your first encounter with `npm`, you need to install the [node.js](https://nodejs.org/) JavScript run-time. The process is straightforward and does not pollute the system locations significantly; just pick the current version, download the package suitable for your platform and install it as usual. The result is a binary program called `node` that can be used to execute JavaScript code from the terminal, and a link called `npm`, pointing to the `npm-cli.js` script, which is part of the node module that implements the npm functionality. On Windows, it is recommended to first install the [Git for Windows](https://git-scm.com/download/win) package.
-
 ## Easy install
 
 The module is available as [**@ilg/es6-promisifier**](https://www.npmjs.com/package/@ilg/es6-promisifier) from the public repository, use `npm` to install it inside the module where it is needed:
