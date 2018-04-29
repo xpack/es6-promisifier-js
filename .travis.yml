@@ -37,10 +37,12 @@ notifications:
     on_success: always # default: change
     on_failure: always # default: always
 
+# https://docs.travis-ci.com/user/caching
 cache:
   directories:
     - node_modules # NPM packages
 
+# https://docs.travis-ci.com/user/customizing-the-build/#Safelisting-or-blocklisting-branches
 branches:
   except:
     - /^v\d+\.\d+(\.\d+)?([-.]\d+)?$/
