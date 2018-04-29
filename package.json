@@ -37,8 +37,8 @@
   "homepage": "https://github.com/xpack/es6-promisifier-js",
   "dependencies": {},
   "devDependencies": {
-    "standard": "~10.0.3",
-    "tap": "~10.7.2"
+    "standard": "~11.0.1",
+    "tap": "~11.1.4"
   },
   "peerDependencies": {},
   "bundledDependencies": [],
