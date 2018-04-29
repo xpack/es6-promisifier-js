@@ -12,7 +12,7 @@ A module providing a class with a static function to wrap standard Node.js callb
 
 A recent [Node.js](https://nodejs.org) (>7.x), since the ECMAScript 6 class syntax is used.
 
-If this is your first encounter with `npm`, you need to install the [node.js](https://nodejs.org/) JavScript run-time. The process is straighforward and does not polute the system locations significantly; just pick the current version, download the package suitable for your platform and install it as usual. The result is a binary program called `node` that can be used to execute JavaScript code from the terminal, and a link called `npm`, pointing to the `npm-cli.js` script, which is part of the node module that implements the npm functionality. On Windows, it is recommended to first install the [Git for Windows](https://git-scm.com/download/win) package.
+If this is your first encounter with `npm`, you need to install the [node.js](https://nodejs.org/) JavScript run-time. The process is straightforward and does not pollute the system locations significantly; just pick the current version, download the package suitable for your platform and install it as usual. The result is a binary program called `node` that can be used to execute JavaScript code from the terminal, and a link called `npm`, pointing to the `npm-cli.js` script, which is part of the node module that implements the npm functionality. On Windows, it is recommended to first install the [Git for Windows](https://git-scm.com/download/win) package.
 
 ## Easy install
 
@@ -22,7 +22,7 @@ The module is available as [**@ilg/es6-promisifier**](https://www.npmjs.com/pack
 $ npm install @ilg/es6-promisifier --save
 ```
 
-The module does not provide any executables, and generaly there are few reasons to install it globally.
+The module does not provide any executables, and generally there are few reasons to install it globally.
 
 The development repository is available from the GitHub [xpack/es6-promisifier-js](https://github.com/xpack/es6-promisifier-js) project.
 
@@ -45,7 +45,7 @@ const mkdirpPromise = Promisifier.promisify(require('mkdirp'))
 
 ### Git repo
 
-```bash
+```console
 $ git clone https://github.com/xpack/es6-promisifier-js.git es6-promisifier-js.git
 $ cd es6-promisifier-js.git
 $ npm install
@@ -57,7 +57,7 @@ A link to the development folder should be present in the system `node_modules` 
 
 In projects that use this module under development, link back from the global location:
 
-```bash
+```console
 $ npm link @ilg/es6-promisifier
 ```
 
@@ -67,7 +67,7 @@ The tests use the [`node-tap`](http://www.node-tap.org) framework (_A Test-Anyth
 
 As for any `npm` package, the standard way to run the project tests is via `npm test`:
 
-```bash
+```console
 $ cd es6-promisifier-js.git
 $ npm install
 $ npm test
@@ -75,7 +75,7 @@ $ npm test
 
 A typical test result looks like:
 
-```
+```console
 $ npm run test
 
 > @ilg/es6-promisifier@0.1.2 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
@@ -91,7 +91,7 @@ total ............................................... 32/32
 
 To run a specific test with more verbose output, use `npm run tap`:
 
-```
+```console
 $ npm run tap test/tap/promisify.js -s
 
 test/tap/promisify.js
@@ -177,7 +177,7 @@ Coverage tests are a good indication on how much of the source files is exercise
 
 To run the coverage tests, use `npm run test-coverage`:
 
-```
+```console
 $ npm run test-coverage
 
 > @ilg/es6-promisifier@0.1.2 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
@@ -218,7 +218,7 @@ Known and accepted exceptions:
 
 To manually fix compliance with the style guide (where possible):
 
-```
+```console
 $ npm run fix
 
 > @ilg/es6-promisifier@0.1.12 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
@@ -232,7 +232,7 @@ The documentation metadata follows the [JSdoc](http://usejsdoc.org) tags.
 
 To enforce checking at file level, add the following comments right after the `use strict`:
 
-```
+```js
 'use strict'
 /* eslint valid-jsdoc: "error" */
 /* eslint max-len: [ "error", 80, { "ignoreUrls": true } ] */
