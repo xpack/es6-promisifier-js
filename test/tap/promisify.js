@@ -309,8 +309,16 @@ test('promisify in place', (t) => {
   t.notOk(fs.readFilePromise, 'promise not there')
   Promisifier.promisifyInPlace(fs, 'readFile')
   t.ok(fs.readFilePromise, 'promise now available')
+  t.ok(fs.promises.readFile, 'promise in promises now available')
   Promisifier.promisifyInPlace(fs, 'readFile')
   t.ok(fs.readFilePromise, 'promise still there')
+  t.ok(fs.promises.readFile, 'promise in promises still there')
+
+  t.notOk(fs.openPromise, 'promise not there')
+  Promisifier.promisifyInPlace(fs, 'open')
+  t.ok(fs.promises.open, 'promise in promises now available')
+  Promisifier.promisifyInPlace(fs, 'open')
+  t.ok(fs.promises.open, 'promise in promises still there')
 
   t.end()
 })

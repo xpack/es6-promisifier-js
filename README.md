@@ -6,34 +6,49 @@
 
 ## An ES6 promisifier wrapper
 
-A module providing a class with a static function to wrap standard Node.js callback functions into ES6 promises.
+A module providing a class with a static function to wrap standard Node.js
+callback functions into ES6 promises.
 
 ## Prerequisites
 
-A recent [Node.js](https://nodejs.org) (>7.x), since the ECMAScript 6 class syntax is used.
+A recent [Node.js](https://nodejs.org) (>7.x), since the ECMAScript 6 
+class syntax is used.
 
 ## Easy install
 
-The module is available as [**@ilg/es6-promisifier**](https://www.npmjs.com/package/@ilg/es6-promisifier) from the public repository, use `npm` to install it inside the module where it is needed:
+The module is available as 
+[`@ilg/es6-promisifier`](https://www.npmjs.com/package/@ilg/es6-promisifier)
+from the public repository, use `npm` to install it inside the module 
+where it is needed:
 
 ```bash
 $ npm install @ilg/es6-promisifier --save
 ```
 
-The module does not provide any executables, and generally there are few reasons to install it globally.
+The module does not provide any executables, and generally there are
+few reasons to install it globally.
 
-The development repository is available from the GitHub [xpack/es6-promisifier-js](https://github.com/xpack/es6-promisifier-js) project.
+The development repository is available from the GitHub 
+[`xpack/es6-promisifier-js`](https://github.com/xpack/es6-promisifier-js) 
+project.
 
 ## User info
 
-The module can be included in any applications and the `Promisifier` class can be used to access the `promisify()` functions.
+The module can be included in any applications and the `Promisifier` 
+class can be used to access the `promisify()` functions.
 
 ```javascript
 const Promisifier = require('@ilg/es6-promisifier').Promisifier
 
 // Promisify functions from the Node.js callbacks library.
-// The new functions have similar names, but suffixed with `Promise`.
-Promisifier.promisifyInPlace(fs, 'readFile')
+// The new functions have similar names, but suffixed with `Promise`,
+// or below a `promises` object.
+Promisifier.promisifyInPlace(fs, 'open')
+// New use case:
+//   const fsPromises = fs.promises
+//   await fsPromises.open()
+// Old use case:
+//   await fs.openPromise()
 
 // Promisify a single function from a third party simple module.
 const mkdirpPromise = Promisifier.promisify(require('mkdirp'))
@@ -47,13 +62,24 @@ const mkdirpPromise = Promisifier.promisify(require('mkdirp'))
 $ git clone https://github.com/xpack/es6-promisifier-js.git es6-promisifier-js.git
 $ cd es6-promisifier-js.git
 $ npm install
+```
+
+```console
 $ sudo npm link 
 $ ls -l /usr/local/lib/node_modules/@ilg
 ```
 
-A link to the development folder should be present in the system `node_modules` folder.
+or without sudo, on Windows or if installed in home folder:
 
-In projects that use this module under development, link back from the global location:
+```console
+$ npm link
+```
+
+A link to the development folder should be present in the global 
+`node_modules` folder.
+
+In projects that use this module under development, link back from 
+the global location:
 
 ```console
 $ npm link @ilg/es6-promisifier
@@ -61,14 +87,16 @@ $ npm link @ilg/es6-promisifier
 
 ### Tests
 
-The tests use the [`node-tap`](http://www.node-tap.org) framework (_A Test-Anything-Protocol library for Node.js_, written by Isaac Schlueter).
+The tests use the [`node-tap`](http://www.node-tap.org) framework 
+(_A Test-Anything-Protocol library for Node.js_, written by Isaac Schlueter).
 
-As for any `npm` package, the standard way to run the project tests is via `npm test`:
+As for any `npm` package, the standard way to run the project tests 
+is via `npm test`:
 
 ```console
 $ cd es6-promisifier-js.git
 $ npm install
-$ npm test
+$ npm run test
 ```
 
 A typical test result looks like:
@@ -171,7 +199,9 @@ test/tap/promisify.js
 
 ### Coverage tests
 
-Coverage tests are a good indication on how much of the source files is exercised by the tests. Ideally all source files should be covered 100%, for all 4 criteria (statements, branches, functions, lines).
+Coverage tests are a good indication on how much of the source files is 
+exercised by the tests. Ideally all source files should be covered 100%, 
+for all 4 criteria (statements, branches, functions, lines).
 
 To run the coverage tests, use `npm run test-coverage`:
 
@@ -208,7 +238,8 @@ To speed up things, the `node_modules` folder is cached between builds.
 
 The module uses ECMAScript 6 class definitions.
 
-As style, it uses the [JavaScript Standard Style](https://standardjs.com/), automatically checked at each commit via Travis CI.
+As style, it uses the [JavaScript Standard Style](https://standardjs.com/), 
+automatically checked at each commit via Travis CI.
 
 Known and accepted exceptions:
 
@@ -228,7 +259,8 @@ $ npm run fix
 
 The documentation metadata follows the [JSdoc](http://usejsdoc.org) tags.
 
-To enforce checking at file level, add the following comments right after the `use strict`:
+To enforce checking at file level, add the following comments right after 
+the `use strict`:
 
 ```js
 'use strict'
@@ -236,8 +268,11 @@ To enforce checking at file level, add the following comments right after the `u
 /* eslint max-len: [ "error", 80, { "ignoreUrls": true } ] */
 ```
 
-Note: be sure C style comments are used, C++ styles are not parsed by [ESLint](http://eslint.org).
+Note: be sure C style comments are used, C++ styles are not parsed by 
+[ESLint](http://eslint.org).
 
 ## License
 
-The original content is released under the [MIT License](https://opensource.org/licenses/MIT), with all rights reserved to [Liviu Ionescu](https://github.com/ilg-ul).
+The original content is released under the 
+[MIT License](https://opensource.org/licenses/MIT), with all rights reserved to
+[Liviu Ionescu](https://github.com/ilg-ul).
