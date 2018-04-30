@@ -1,6 +1,6 @@
 {
   "name": "@ilg/es6-promisifier",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "An ES6 promisifier wrapper",
   "main": "./index.js",
   "directories": {
