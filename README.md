@@ -273,6 +273,16 @@ the `use strict`:
 Note: be sure C style comments are used, C++ styles are not parsed by 
 [ESLint](http://eslint.org).
 
+### How to publish
+
+* commit all changes
+* `npm run test` (`fix` included)
+* update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
+* `npm version patch`
+* push all changes to GitHub; this should trigger CI
+* wait for CI tests to complete
+* `npm publish`
+
 ## License
 
 The original content is released under the 
