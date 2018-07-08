@@ -45,10 +45,12 @@ const Promisifier = require('@ilg/es6-promisifier').Promisifier
 // or below a `promises` object.
 Promisifier.promisifyInPlace(fs, 'open')
 // New use case:
-//   const fsPromises = fs.promises
+//   const fsPromises = fs.promises_
 //   await fsPromises.open()
 // Old use case:
 //   await fs.openPromise()
+// Note: using `promises_` is a workaround to avoid the `fs.promises`
+// warning.
 
 // Promisify a single function from a third party simple module.
 const mkdirpPromise = Promisifier.promisify(require('mkdirp'))
