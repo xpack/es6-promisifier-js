@@ -5,7 +5,7 @@
 # async supported from v7.x, but test starts at 8.x
 environment:
   matrix:
-    - nodejs_version: "9"
+    - nodejs_version: "10"
     - nodejs_version: "8"
 
 # set clone depth
