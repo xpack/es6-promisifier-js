@@ -3,6 +3,10 @@
 Changes in reverse chronological order.
 Don't forget to close GitHub [issues](https://github.com/xpack/es6-promisifier-js/issues).
 
+## v1.0.0 (2019-01-26)
+
+- moved to `@xpack/es6-promisifer`
+
 ## v0.3.0 (2018-07-08)
 
 - use `promises_` to avoid `fs.promises` warning issued by Node.js 10
