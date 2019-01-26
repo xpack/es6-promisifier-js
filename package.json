@@ -1,6 +1,6 @@
 {
-  "name": "@ilg/es6-promisifier",
-  "version": "0.3.0",
+  "name": "@xpack/es6-promisifier",
+  "version": "1.0.0",
   "description": "An ES6 promisifier wrapper",
   "main": "./index.js",
   "directories": {
@@ -23,7 +23,8 @@
   },
   "keywords": [
     "es6",
-    "promise"
+    "promise",
+    "promisifer"
   ],
   "author": {
     "name": "Liviu Ionescu",
@@ -37,8 +38,8 @@
   "homepage": "https://github.com/xpack/es6-promisifier-js",
   "dependencies": {},
   "devDependencies": {
-    "standard": "~11.0.1",
-    "tap": "~12.0.1"
+    "standard": "~12.0.1",
+    "tap": "~12.4.0"
   },
   "peerDependencies": {},
   "bundledDependencies": [],

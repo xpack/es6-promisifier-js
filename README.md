@@ -1,4 +1,4 @@
-[![npm (scoped)](https://img.shields.io/npm/v/@ilg/es6-promisifier.svg)](https://www.npmjs.com/package/@ilg/es6-promisifier) 
+[![npm (scoped)](https://img.shields.io/npm/v/@xpack/es6-promisifier.svg)](https://www.npmjs.com/package/@xpack/es6-promisifier) 
 [![license](https://img.shields.io/github/license/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/blob/xpack/LICENSE) 
 [![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![Travis](https://img.shields.io/travis/xpack/es6-promisifier-js.svg?label=linux)](https://travis-ci.org/xpack/es6-promisifier-js)
@@ -6,8 +6,8 @@
 
 ## An ES6 promisifier wrapper
 
-A module providing a class with a static function to wrap standard Node.js
-callback functions into ES6 promises.
+A Node.js module with a class providing a static function to wrap 
+standard Node.js callback functions into ES6 promises.
 
 ## Prerequisites
 
@@ -17,12 +17,12 @@ class syntax is used.
 ## Easy install
 
 The module is available as 
-[`@ilg/es6-promisifier`](https://www.npmjs.com/package/@ilg/es6-promisifier)
+[`@xpack/es6-promisifier`](https://www.npmjs.com/package/@xpack/es6-promisifier)
 from the public repository, use `npm` to install it inside the module 
 where it is needed:
 
 ```bash
-$ npm install @ilg/es6-promisifier --save
+$ npm install @xpack/es6-promisifier --save
 ```
 
 The module does not provide any executables, and generally there are
@@ -38,17 +38,20 @@ The module can be included in any applications and the `Promisifier`
 class can be used to access the `promisify()` functions.
 
 ```javascript
-const Promisifier = require('@ilg/es6-promisifier').Promisifier
+const Promisifier = require('@xpack/es6-promisifier').Promisifier
 
 // Promisify functions from the Node.js callbacks library.
 // The new functions have similar names, but suffixed with `Promise`,
 // or below a `promises` object.
 Promisifier.promisifyInPlace(fs, 'open')
+
 // New use case:
 //   const fsPromises = fs.promises_
 //   await fsPromises.open()
+
 // Old use case:
 //   await fs.openPromise()
+
 // Note: using `promises_` is a workaround to avoid the `fs.promises`
 // warning.
 
@@ -68,7 +71,7 @@ $ npm install
 
 ```console
 $ sudo npm link 
-$ ls -l /usr/local/lib/node_modules/@ilg
+$ ls -l /usr/local/lib/node_modules/@xpack
 ```
 
 or without sudo, on Windows or if installed in home folder:
@@ -84,7 +87,7 @@ In projects that use this module under development, link back from
 the global location:
 
 ```console
-$ npm link @ilg/es6-promisifier
+$ npm link @xpack/es6-promisifier
 ```
 
 ### Tests
@@ -106,13 +109,13 @@ A typical test result looks like:
 ```console
 $ npm run test
 
-> @ilg/es6-promisifier@0.1.2 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.0 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > standard && npm run test-tap -s
 
-test/tap/promisify.js ............................... 32/32
-total ............................................... 32/32
+test/tap/promisify.js ............................... 37/37
+total ............................................... 37/37
 
-  32 passing (669.026ms)
+  37 passing (629.494ms)
 
   ok
 ```
@@ -193,10 +196,15 @@ test/tap/promisify.js
   promisify in place
     ✓ promise not there
     ✓ promise now available
+    ✓ promise in promises now available
     ✓ promise still there
+    ✓ promise in promises still there
+    ✓ promise not there
+    ✓ promise in promises now available
+    ✓ promise in promises still there
 
 
-  32 passing (617.365ms)
+  37 passing (608.459ms)
 ```
 
 ### Coverage tests
@@ -210,24 +218,24 @@ To run the coverage tests, use `npm run test-coverage`:
 ```console
 $ npm run test-coverage
 
-> @ilg/es6-promisifier@0.1.2 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.0 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > tap --coverage --reporter=classic --timeout 600 --no-color "test/tap/*.js"
 
-test/tap/promisify.js ............................... 32/32
-total ............................................... 32/32
+test/tap/promisify.js ............................... 37/37
+total ............................................... 37/37
 
-  32 passing (829.493ms)
+  37 passing (1s)
 
   ok
-----------------------------|----------|----------|----------|----------|----------------|
-File                        |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
-----------------------------|----------|----------|----------|----------|----------------|
-All files                   |      100 |      100 |      100 |      100 |                |
- es6-promisifier-js.git     |      100 |      100 |      100 |      100 |                |
-  index.js                  |      100 |      100 |      100 |      100 |                |
- es6-promisifier-js.git/lib |      100 |      100 |      100 |      100 |                |
-  promisifier.js            |      100 |      100 |      100 |      100 |                |
-----------------------------|----------|----------|----------|----------|----------------|
+----------------------------|----------|----------|----------|----------|-------------------|
+File                        |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------------------------|----------|----------|----------|----------|-------------------|
+All files                   |      100 |      100 |      100 |      100 |                   |
+ es6-promisifier-js.git     |      100 |      100 |      100 |      100 |                   |
+  index.js                  |      100 |      100 |      100 |      100 |                   |
+ es6-promisifier-js.git/lib |      100 |      100 |      100 |      100 |                   |
+  promisifier.js            |      100 |      100 |      100 |      100 |                   |
+----------------------------|----------|----------|----------|----------|-------------------|
 ```
 
 ### Continuous Integration (CI)
@@ -252,9 +260,8 @@ To manually fix compliance with the style guide (where possible):
 ```console
 $ npm run fix
 
-> @ilg/es6-promisifier@0.1.12 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.0 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > standard --fix
-
 ```
 
 ### Documentation metadata
@@ -275,13 +282,15 @@ Note: be sure C style comments are used, C++ styles are not parsed by
 
 ### How to publish
 
+* `npm run fix`
 * commit all changes
-* `npm run test` (`fix` included)
-* update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v0.1.2_
-* `npm version patch`
+* `npm run test-coverage`
+* update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v1.2.3_
+* `npm version patch` (bug fixes), `npm version minor` (compatible API 
+  additions), `npm version major` (incompatible API changes)
 * push all changes to GitHub; this should trigger CI
 * wait for CI tests to complete
-* `npm publish`
+* `npm publish` (use `--access public` when publishing for the first time)
 
 ## License
 
