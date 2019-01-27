@@ -3,6 +3,13 @@
 [![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![Travis](https://img.shields.io/travis/xpack/es6-promisifier-js.svg?label=linux)](https://travis-ci.org/xpack/es6-promisifier-js)
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/f11aw2irha640ank?svg=true)](https://ci.appveyor.com/project/ilg-ul/es6-promisifier-js)
+## DEPRECATED!
+
+This package was moved to the `@xpack` scope.
+
+To install it use `@xpack/es6-promisifier`.
+
+There are no plans for further releases of this package in the `@ilg` scope.
 
 ## An ES6 promisifier wrapper
 
