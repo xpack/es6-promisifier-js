@@ -3,6 +3,13 @@
 Changes in reverse chronological order.
 Don't forget to close GitHub [issues](https://github.com/xpack/es6-promisifier-js/issues).
 
+## v1.0.1 (2019-11-26)
+
+- no functional changes
+- package.json: bump deps
+- package.json: update scripts to use --100
+- switch to GitHub Actions
+
 ## v1.0.0 (2019-01-26)
 
 - moved to `@xpack/es6-promisifer`
