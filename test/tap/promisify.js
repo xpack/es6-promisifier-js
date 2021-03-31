@@ -297,7 +297,7 @@ test('promisify thisArg error await', async (t) => {
 
 test('constructor', (t) => {
   try {
-    var obj = new Promisifier()
+    const obj = new Promisifier()
     t.notOk(obj, 'no return')
   } catch (err) {
     t.match(err.name, 'AssertionError', 'assert')
