@@ -52,7 +52,7 @@ A typical test result looks like:
 ```console
 $ npm run test
 
-> @xpack/es6-promisifier@1.0.1 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.2 test /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > standard && npm run test-tap -s
 
 test/tap/promisify.js ............................... 37/37
@@ -161,7 +161,7 @@ To run the coverage tests, use `npm run test-coverage`:
 ```console
 $ npm run test-coverage
 
-> @xpack/es6-promisifier@1.0.1 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.2 test-coverage /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > tap --coverage --reporter=classic --timeout 600 --no-color "test/tap/*.js"
 
 test/tap/promisify.js ............................... 37/37
@@ -203,7 +203,7 @@ To manually fix compliance with the style guide (where possible):
 ```console
 $ npm run fix
 
-> @xpack/es6-promisifier@1.0.1 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
+> @xpack/es6-promisifier@1.0.2 fix /Users/ilg/My Files/MacBookPro Projects/xPack/npm-modules/es6-promisifier-js.git
 > standard --fix --verbose
 ```
 
@@ -229,7 +229,7 @@ Note: be sure C style comments are used, C++ styles are not parsed by
 - commit all changes
 - `npm run test-coverage`
 - check the latest commits `npm run git-log`
-- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v1.0.1_
+- update `CHANGELOG.md`; commit with a message like _CHANGELOG: prepare v1.0.2_
 - `npm pack` and check the content
 - `npm version patch` (bug fixes), `npm version minor` (compatible API
   additions), `npm version major` (incompatible API changes)
@@ -251,7 +251,7 @@ npm install -global @xpack/es6-promisifier@next
 When stable:
 
 - `npm dist-tag ls @xpack/es6-promisifier`
-- `npm dist-tag add @xpack/es6-promisifier@1.0.1 latest`
+- `npm dist-tag add @xpack/es6-promisifier@1.0.2 latest`
 - `npm dist-tag ls @xpack/es6-promisifier`
 
 ### Update repo

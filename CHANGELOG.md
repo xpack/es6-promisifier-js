@@ -3,7 +3,10 @@
 Changes in reverse chronological order.
 Don't forget to close GitHub [issues](https://github.com/xpack/es6-promisifier-js/issues/).
 
-## v1.0.1 (2019-11-26)
+## 2021-03-31
+
+- v1.0.2 released
+- bump deps & audit fix
 
 ## 2019-11-26
 
