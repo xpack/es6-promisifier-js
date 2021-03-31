@@ -2,7 +2,7 @@
 [![license](https://img.shields.io/github/license/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/blob/xpack/LICENSE)
 [![Standard](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![Actions Status](https://github.com/xpack/es6-promisifier-js/workflows/Node.js%20CI%20on%20Push/badge.svg)](https://github.com/xpack/es6-promisifier-js/actions)
-[![GitHub issues](https://img.shields.io/github/issues/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/issues)
+[![GitHub issues](https://img.shields.io/github/issues/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/issues/)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/xpack/es6-promisifier-js.svg)](https://github.com/xpack/es6-promisifier-js/pulls)
 
 ## An ES6 promisifier wrapper
